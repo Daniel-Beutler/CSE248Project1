@@ -1,14 +1,52 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package parkinglot;
 
 /**
  *
  * @author Dan
  */
-public class Vehicle {
+public abstract class Vehicle {
+
+    private String size;
+    public String licensePlate;
+    private boolean parkingStatus;
+
+    public Vehicle() {
+
+    }
+
+    public Vehicle(String licensePlate, String size) {
+        this.licensePlate = licensePlate;
+        this.size = size;
+
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    ;  
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public boolean isHandicaped() {
+        return false;
+    }
     
+    public ParkingSpot findSpot()
+    {
+        ParkingSpot spotFinder;
+        if(size=="small")
+        {
+           spotFinder = ParkingSpot.getMotoSpot().remove(0); 
+        }
+    }
 }

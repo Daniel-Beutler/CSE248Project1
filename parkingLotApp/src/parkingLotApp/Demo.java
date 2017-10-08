@@ -1,4 +1,4 @@
-package parkingLotApp;
+    package parkingLotApp;
 
 public class Demo {
 

@@ -1,5 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package parkinglot;
-public class Car extends Vehicle {
+
+/**
+ *
+ * @author Dan
+ */
+public class Truck extends Vehicle {
 
     @Override
     public void setLicensePlate(String licensePlate) {
@@ -13,7 +23,7 @@ public class Car extends Vehicle {
 
     @Override
     public void setSize(String size) {
-        this.size = "medium";
+        this.size = "large";
     }
 
     ;  
@@ -26,5 +36,4 @@ public class Car extends Vehicle {
     public boolean isHandicaped() {
         return false;
     }
-
 }

@@ -11,7 +11,10 @@ package parkinglot;
  */
 public class HandicappedCar extends Vehicle {
 
-    @Override
+    private String licensePlate;
+    private String size;
+    private final boolean isHandicapped =true;
+
     public void setLicensePlate(String licensePlate) {
         licensePlate = this.licensePlate;
     }
@@ -32,8 +35,5 @@ public class HandicappedCar extends Vehicle {
         return size;
     }
 
-    @Override
-    public boolean isHandicaped() {
-        return true;
-    }
+  
 }

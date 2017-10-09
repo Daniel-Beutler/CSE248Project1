@@ -10,7 +10,11 @@ package parkinglot;
  * @author Dan
  */
 public class Motorcycle extends Vehicle {
- private String licensePlate;
+
+    private String licensePlate;
+    private String size;
+    private final boolean isHandicapped = false;
+
     @Override
     public void setLicensePlate(String licensePlate) {
         licensePlate = this.licensePlate;
@@ -32,8 +36,4 @@ public class Motorcycle extends Vehicle {
         return size;
     }
 
-    @Override
-    public boolean isHandicaped() {
-        return false;
-    }
 }

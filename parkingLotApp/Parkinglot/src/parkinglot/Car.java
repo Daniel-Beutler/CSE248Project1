@@ -1,5 +1,10 @@
 package parkinglot;
+
 public class Car extends Vehicle {
+
+    private String licensePlate;
+    private String size;
+    private final boolean isHandicapped = false;
 
     @Override
     public void setLicensePlate(String licensePlate) {
@@ -20,11 +25,6 @@ public class Car extends Vehicle {
     @Override
     public String getSize() {
         return size;
-    }
-
-    @Override
-    public boolean isHandicaped() {
-        return false;
     }
 
 }

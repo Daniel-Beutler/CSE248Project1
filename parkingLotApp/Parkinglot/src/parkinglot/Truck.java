@@ -10,14 +10,22 @@ package parkinglot;
  * @author Dan
  */
 public class Truck extends Vehicle {
-
+/**
+ * Car class extends vehicle superclass 
+ * sets size and floor letter for all trucks
+ * @param String size the size of the trucks
+ * @param String licensePlate the trucks unique plate number
+ *@param String floor the floor that all trucks  go on
+ */
     private String licensePlate;
-    private String size;
+    private String size = "large";
     private final boolean isHandicapped = false;
+    String floor = "D";
+    ParkingLotControl parkingLot;
 
     Truck(String licensePlate) {
         this.licensePlate = licensePlate;
-
+        parkingLot = ParkingLotControl.getInstance();
     }
 
     @Override
@@ -35,7 +43,6 @@ public class Truck extends Vehicle {
         this.size = "large";
     }
 
-    ;  
     @Override
     public String getSize() {
         return size;

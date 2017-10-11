@@ -7,40 +7,42 @@ package parkinglot;
 
 /**
  *
- * @author Dan
+ * @author Daniel Beutler
  */
 public class ParkingSpot {
-
+/**
+ * Sets up parkingSpots, gives them a size and the ability to be parked on */
     public int lotNumber;
-    public int time;
-    private boolean openSpot;
     private String size;
     private Vehicle myParker;
-    private boolean isHandi = false;
-
-    public ParkingSpot(int lotNumber, String Size, boolean isHandi) {
-        this.lotNumber = lotNumber;
-        this.size = size;
-        this.openSpot = true;
-
+    private int parkedTime;
+  
+    public ParkingSpot()
+    {
+        
+    }
+    public ParkingSpot(int parkedTime, String Size) {
+        this.parkedTime = parkedTime;
     }
 
     public void setlotNumber(int lotNumber) {
         lotNumber = this.lotNumber;
     }
 
-    public int getlotNumber() {
-        return lotNumber;
+    public void setParkedTime(int parkedTime) {
+        this.parkedTime = parkedTime;
     }
 
-    public void park(Vehicle v) {
+    public int getParkedTime() {
+        return parkedTime;
+    }
+
+//** method that allows vehicle to park
+    public void occupy(Vehicle v) {
         this.myParker = v;
-        this.openSpot = false;
-
+        size = v.getSize();
     }
 
-    public void pickUp() {
-        this.myParker = null;
-        this.openSpot = true;
-    }
+   
+
 }

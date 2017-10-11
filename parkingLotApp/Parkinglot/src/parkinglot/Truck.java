@@ -13,8 +13,12 @@ public class Truck extends Vehicle {
 
     private String licensePlate;
     private String size;
-    private final boolean isHandicapped =false;
+    private final boolean isHandicapped = false;
 
+    Truck(String licensePlate) {
+        this.licensePlate = licensePlate;
+
+    }
 
     @Override
     public void setLicensePlate(String licensePlate) {
@@ -37,5 +41,4 @@ public class Truck extends Vehicle {
         return size;
     }
 
-    
 }

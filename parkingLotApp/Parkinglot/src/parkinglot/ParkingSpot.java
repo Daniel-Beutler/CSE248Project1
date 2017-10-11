@@ -33,8 +33,8 @@ public class ParkingSpot {
         return lotNumber;
     }
 
-    public void park(Vehicle myParker) {
-        this.myParker = myParker;
+    public void park(Vehicle v) {
+        this.myParker = v;
         this.openSpot = false;
 
     }

@@ -15,6 +15,10 @@ public class Motorcycle extends Vehicle {
     private String size;
     private final boolean isHandicapped = false;
 
+    Motorcycle(String licensePlate) {
+        this.licensePlate = licensePlate;
+
+    }
     @Override
     public void setLicensePlate(String licensePlate) {
         licensePlate = this.licensePlate;

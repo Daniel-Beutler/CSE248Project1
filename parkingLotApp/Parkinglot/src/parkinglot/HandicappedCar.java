@@ -13,7 +13,12 @@ public class HandicappedCar extends Vehicle {
 
     private String licensePlate;
     private String size;
-    private final boolean isHandicapped =true;
+    private final boolean isHandicapped = true;
+
+    HandicappedCar(String licensePlate) {
+        this.licensePlate = licensePlate;
+
+    }
 
     public void setLicensePlate(String licensePlate) {
         licensePlate = this.licensePlate;
@@ -35,5 +40,4 @@ public class HandicappedCar extends Vehicle {
         return size;
     }
 
-  
 }

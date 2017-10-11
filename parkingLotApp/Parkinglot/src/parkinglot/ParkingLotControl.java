@@ -10,17 +10,17 @@ import java.util.List;
  */
 public class ParkingLotControl {
 
-    HashMap<String  , ParkingSpot> fullSpots;
+    HashMap<String, ParkingSpot> fullSpots;
     List<ParkingSpot> carSpots;
     List<ParkingSpot> handiSpots;
     List<ParkingSpot> truckSpots;
     List<ParkingSpot> motoSpots;
     private int carSpotNumber;
-    protected int handiSpotNumber;
+    private int handiSpotNumber;
     private int truckSpotNumber;
     private int motoSpotNumber;
 
-    private ParkingLotControl() {
+    ParkingLotControl() {
         carSpots = new LinkedList();
         handiSpots = new LinkedList();
         truckSpots = new LinkedList();
@@ -56,6 +56,26 @@ public class ParkingLotControl {
 
     public List<ParkingSpot> getMotoSpot() {
         return motoSpots;
+    }
+
+    public void setCarSpotNumber(int carSpotNumber) {
+        this.carSpotNumber = carSpotNumber;
+    }
+
+    public void setHandiSpotNumber(int handiSpotNumber) {
+        this.handiSpotNumber = handiSpotNumber;
+    }
+
+    public void setTruckSpotNumber(int truckSpotNumber) {
+        this.truckSpotNumber = truckSpotNumber;
+    }
+
+    public void setMotoSpotNumber(int motoSpotNumber) {
+        this.motoSpotNumber = motoSpotNumber;
+    }
+
+    public int getHandiSpotNumber() {
+        return handiSpotNumber;
     }
 
 }

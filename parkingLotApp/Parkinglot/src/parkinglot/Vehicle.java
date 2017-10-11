@@ -16,9 +16,8 @@ public abstract class Vehicle {
 
     }
 
-    public Vehicle(String licensePlate, String size) {
+    public Vehicle(String licensePlate) {
         this.licensePlate = licensePlate;
-        this.size = size;
 
     }
 
@@ -39,9 +38,9 @@ public abstract class Vehicle {
         return size;
     }
 // finds the next spot in the linked list and puts a car into it 
+
     public ParkingSpot findSpot() {
         ParkingSpot spotFinder;
-        spotFinder = null;
         if (size == "small") {
             spotFinder = parkingLot.getMotoSpot().remove(0);
         }
@@ -51,17 +50,16 @@ public abstract class Vehicle {
         if (size == "medium" & isHandicaped == true) {
             spotFinder = parkingLot.getHandiSpot().remove(0);
         }
-        if (size == "medium" & isHandicaped == true & parkingLot.handiSpots.size()<= parkingLot.handiSpotNumber) {
-            spotFinder = parkingLot.getCarSpot().remove(0);
-        }
         if (size == "large" & isHandicaped == true) {
             spotFinder = parkingLot.getTruckSpot().remove(0);
         }
-        
+        else spotFinder=null;
+
         return spotFinder;
 
     }
-// parks the car using put from the has map and the park method
+// parks the car using put from the hash map and the park method
+
     public void park() {
         ParkingSpot Parker = findSpot();
         if (Parker != null) {
@@ -71,20 +69,22 @@ public abstract class Vehicle {
 
     }
 // replaces the vehicle in the linked list with a null
+
     public void pickUp() {
         ParkingSpot unParker = parkingLot.fullSpots.remove(this.licensePlate);
         unParker.pickUp();
         if (size == "small") {
-           parkingLot.getMotoSpot().add(unParker);
+            parkingLot.getMotoSpot().add(unParker);
         }
         if (size == "medium" & isHandicaped == false) {
             parkingLot.getCarSpot().add(unParker);
         }
         if (size == "medium" & isHandicaped == true) {
-             parkingLot.getHandiSpot().add(unParker);
+            parkingLot.getHandiSpot().add(unParker);
         }
         if (size == "large" & isHandicaped == true) {
             parkingLot.getTruckSpot().add(unParker);
         }
     }
+
 }

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="parkinglot">
+  <ClassDiagramComponents>
+    <Class name="Car" package="parkinglot" visibility="public" xPosition="353.0" yPosition="911.0">
+      <Fields>
+        <Field name="licensePlate" type="String" visibility="private" isFinal="true"/>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="floor" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLicensePlate" returnType="void" visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Method>
+        <Method name="getLicensePlate" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HandicappedCar" package="parkinglot" visibility="public" xPosition="990.0" yPosition="911.0">
+      <Fields>
+        <Field name="licensePlate" type="String" visibility="private"/>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="isHandicapped" type="boolean" visibility="private" isFinal="true"/>
+        <Field name="floor" type="String" visibility="package"/>
+        <Field name="parkingLot" type="ParkingLotControl" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="licensePlate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLicensePlate" returnType="void" visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Method>
+        <Method name="getLicensePlate" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Motorcycle" package="parkinglot" visibility="public" xPosition="676.0" yPosition="911.0">
+      <Fields>
+        <Field name="licensePlate" type="String" visibility="private"/>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="isHandicapped" type="boolean" visibility="private" isFinal="true"/>
+        <Field name="floor" type="String" visibility="package"/>
+        <Field name="parkingLot" type="ParkingLotControl" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="licensePlate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLicensePlate" returnType="void" visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Method>
+        <Method name="getLicensePlate" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="parkingLot" package="parkinglot" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="buttonAdd" type="Button" visibility="private" isFinal="true"/>
+        <Field name="buttonPickUp" type="Button" visibility="private" isFinal="true"/>
+        <Field name="buttonDisplay" type="Button" visibility="private" isFinal="true"/>
+        <Field name="buttonPay" type="Button" visibility="private" isFinal="true"/>
+        <Field name="returnButton" type="Button" visibility="private" isFinal="true"/>
+        <Field name="window" type="Stage" visibility="private"/>
+        <Field name="sceneMain" type="Scene" visibility="private"/>
+        <Field name="moto1" type="Motorcycle" visibility="private"/>
+        <Field name="truck1" type="Truck" visibility="private"/>
+        <Field name="car1" type="Car" visibility="private"/>
+        <Field name="handi1" type="HandicappedCar" visibility="private"/>
+        <Field name="motoBox" type="CheckBox" visibility="private"/>
+        <Field name="carBox" type="CheckBox" visibility="private"/>
+        <Field name="truckBox" type="CheckBox" visibility="private"/>
+        <Field name="handiBox" type="CheckBox" visibility="private"/>
+        <Field name="textMain" type="TextField" visibility="private"/>
+        <Field name="dayField" type="TextField" visibility="private"/>
+        <Field name="monthField" type="TextField" visibility="private"/>
+        <Field name="hourField" type="TextField" visibility="private"/>
+        <Field name="yearField" type="TextField" visibility="private"/>
+        <Field name="dayLabel" type="Label" visibility="private"/>
+        <Field name="monthLabel" type="Label" visibility="private"/>
+        <Field name="hourLabel" type="Label" visibility="private"/>
+        <Field name="yearLabel" type="Label" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="handle" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="event"/>
+        </Method>
+        <Method name="mainScreenControl" returnType="void" visibility="public"/>
+        <Method name="pickUpScreen" returnType="void" visibility="public"/>
+        <Method name="displayScreen" returnType="void" visibility="public"/>
+        <Method name="payment" returnType="int" visibility="public"/>
+        <Method name="mainScreen" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ParkingLotControl" package="parkinglot" visibility="public" xPosition="1120.0" yPosition="20.0">
+      <Fields>
+        <Field name="lot" type="ParkingLotControl" visibility="private" isStatic="true"/>
+        <Field name="fullSpots" type="Map&lt;String, ParkingSpot&gt;" visibility="package"/>
+        <Field name="carSpots" type="List&lt;ParkingSpot&gt;" visibility="private" isFinal="true"/>
+        <Field name="handiSpots" type="List&lt;ParkingSpot&gt;" visibility="private" isFinal="true"/>
+        <Field name="truckSpots" type="List&lt;ParkingSpot&gt;" visibility="private" isFinal="true"/>
+        <Field name="motoSpots" type="List&lt;ParkingSpot&gt;" visibility="private" isFinal="true"/>
+        <Field name="carSpotNumber" type="int" visibility="private"/>
+        <Field name="handiSpotNumber" type="int" visibility="private"/>
+        <Field name="truckSpotNumber" type="int" visibility="private"/>
+        <Field name="motoSpotNumber" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCarSpot" returnType="List&lt;ParkingSpot&gt;" visibility="public"/>
+        <Method name="getHandiSpot" returnType="List&lt;ParkingSpot&gt;" visibility="public"/>
+        <Method name="getTruckSpot" returnType="List&lt;ParkingSpot&gt;" visibility="public"/>
+        <Method name="getMotoSpot" returnType="List&lt;ParkingSpot&gt;" visibility="public"/>
+        <Method name="setCarSpotNumber" returnType="void" visibility="public">
+          <Argument type="int" name="carSpotNumber"/>
+        </Method>
+        <Method name="setHandiSpotNumber" returnType="void" visibility="public">
+          <Argument type="int" name="handiSpotNumber"/>
+        </Method>
+        <Method name="setTruckSpotNumber" returnType="void" visibility="public">
+          <Argument type="int" name="truckSpotNumber"/>
+        </Method>
+        <Method name="setMotoSpotNumber" returnType="void" visibility="public">
+          <Argument type="int" name="motoSpotNumber"/>
+        </Method>
+        <Method name="getHandiSpotNumber" returnType="int" visibility="public"/>
+        <Method name="getInstance" returnType="ParkingLotControl" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ParkingSpot" package="parkinglot" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="lotNumber" type="int" visibility="public"/>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="myParker" type="Vehicle" visibility="private"/>
+        <Field name="parkedTime" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="parkedTime"/>
+          <Argument type="String" name="Size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setlotNumber" returnType="void" visibility="public">
+          <Argument type="int" name="lotNumber"/>
+        </Method>
+        <Method name="setParkedTime" returnType="void" visibility="public">
+          <Argument type="int" name="parkedTime"/>
+        </Method>
+        <Method name="getParkedTime" returnType="int" visibility="public"/>
+        <Method name="occupy" returnType="void" visibility="public">
+          <Argument type="Vehicle" name="v"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Truck" package="parkinglot" visibility="public" xPosition="1337.0" yPosition="911.0">
+      <Fields>
+        <Field name="licensePlate" type="String" visibility="private"/>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="isHandicapped" type="boolean" visibility="private" isFinal="true"/>
+        <Field name="floor" type="String" visibility="package"/>
+        <Field name="parkingLot" type="ParkingLotControl" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package">
+          <Argument type="String" name="licensePlate"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLicensePlate" returnType="void" visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Method>
+        <Method name="getLicensePlate" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Vehicle" package="parkinglot" visibility="public" isAbstract="true" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="size" type="String" visibility="private"/>
+        <Field name="licensePlate" type="String" visibility="private"/>
+        <Field name="parkingStatus" type="boolean" visibility="private"/>
+        <Field name="parkingLot" type="ParkingLotControl" visibility="package"/>
+        <Field name="isHandicaped" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="licensePlate"/>
+          <Argument type="int" name="parkedTime"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setLicensePlate" returnType="void" visibility="public">
+          <Argument type="String" name="licensePlate"/>
+        </Method>
+        <Method name="getLicensePlate" returnType="String" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="String" name="size"/>
+        </Method>
+        <Method name="getSize" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="moto1" source="parkinglot.parkingLot" target="parkinglot.Motorcycle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="parkinglot.HandicappedCar" target="parkinglot.Vehicle"/>
+    <HasRelation name="lot" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingLotControl" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="myParker" source="parkinglot.ParkingSpot" target="parkinglot.Vehicle" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="parkinglot.ParkingLotControl" target="parkinglot.ParkingLotControl" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="motoSpots" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ParkingSpot&gt;"/>
+    <HasRelation name="fullSpots" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Map&lt;String, ParkingSpot&gt;"/>
+    <HasRelation name="truckSpots" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ParkingSpot&gt;"/>
+    <IsRelation name="is" source="parkinglot.Truck" target="parkinglot.Vehicle"/>
+    <HasRelation name="handiSpots" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ParkingSpot&gt;"/>
+    <HasRelation name="truck1" source="parkinglot.parkingLot" target="parkinglot.Truck" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parkingLot" source="parkinglot.Truck" target="parkinglot.ParkingLotControl" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="parkinglot.Car" target="parkinglot.Vehicle"/>
+    <HasRelation name="car1" source="parkinglot.parkingLot" target="parkinglot.Car" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="carSpots" source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ParkingSpot&gt;"/>
+    <UseRelation source="parkinglot.ParkingSpot" target="parkinglot.Vehicle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="parkinglot.Motorcycle" target="parkinglot.Vehicle"/>
+    <HasRelation name="parkingLot" source="parkinglot.Motorcycle" target="parkinglot.ParkingLotControl" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parkingLot" source="parkinglot.Vehicle" target="parkinglot.ParkingLotControl" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="parkingLot" source="parkinglot.HandicappedCar" target="parkinglot.ParkingLotControl" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="parkinglot.ParkingLotControl" target="parkinglot.ParkingSpot" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="handi1" source="parkinglot.parkingLot" target="parkinglot.HandicappedCar" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
